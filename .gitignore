@@ -1,0 +1,6 @@
+# ignore files
+*.aux
+*.log
+*.synctex.gz
+*.toc
+
