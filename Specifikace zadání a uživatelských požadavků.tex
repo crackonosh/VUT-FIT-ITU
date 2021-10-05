@@ -4,8 +4,8 @@
 \usepackage{times}
 \usepackage{graphicx}
 \usepackage{url}
-\usepackage[titlenumbered, longend, noline, ruled, czech]{algorithm2e}
 \usepackage[a4paper, total={17cm, 24cm}, top=3cm, left=2cm]{geometry}
+\setcounter{tocdepth}{5} % for showing subsections in TOC
 
 \graphicspath{{./images/}}
 
@@ -32,7 +32,60 @@
 \tableofcontents
 \newpage
 
-\section{Conception}
-Create application that is able to capture and filter packets on specified network device.
+\section{Analýzy a návrhy členů týmu}
+
+\subsection{Lukáš Hais}
+\subsubsection{Způsob hledání tématu}
+Obepisování blízkých přátel s~dotazem, zda nemají nějakou aplikaci u~které by věděli o~nějakých funkčních/grafických nedostatcích. Následně byla 1~
+aplikace vybrána dle osobních preferencí.
+\subsubsection{Způsob zkoumání uživatele a jeho potřeby}
+Sraz s~uživatelem a~sledování jeho využívání aplikace, doptávání~se na~očekávanou funkcionalitu.\\
+Uživatel požaduje aplikaci, která mu umožní zaznamenávat data z~různých oblastí (počet uběhnutých kilometrů, objem vypíte vody za den, hodiny strávené učením,  \ldots) a následné zobrazení grafů podle časového období, filtrované pomocí kategorií spravovaných uživatelem.
+\subsubsection{Identifikované potíže}
+Neintuitivnost samotné aplikace. Chybí kategorie pro položky podle kterých by bylo možné filtrovat. Nepřehlednost zobrazených grafů.
+\subsubsection{Návrh nového řešení}
+Znovuvytvoření aplikace s~novým, modernějším designem. Přidání chybějících funkcionalit a~implementace stávajících.
+
+\subsection{Tadeáš Kachyňa}
+\subsection{Lukáš Neupauer}
+
+
+
+\newpage
+
+
+
+\section{Důvod vybrání zvoleného tématu}
+Po společném schůzi se tým demokraticky rozhodl pro volbu aplikace od \emph{Lukáše Haise.} Důvodem k~tomuto kroku bylo celkové zalíbení členů pro daný projekt.
+
+\section{Analýza uživatele}
+Uživatel pracuje jakožto číšník a ve volném čase sportuje. Má rád data a~výstupy z~nich, které mu mohou dát nějaký retrospektivní pohled na různé části jeho života. 
+
+\section{Potřeby uživatele}
+Uživatel chce využívat aplikaci pro zaznamenávání dat a~následné retrospektivní vyhodnocování zaznamenaných dat.\\
+Může jít např. o~sledování četnosti výskytu zlozvyků, udržování nastavených pravidel (např. denní příjem vody), sledování zlepšení fyzických výkonů, \uv{RPG statistiky} při dlouhodobém využívaní aplikace a~zaznamenávání velkého množství dat.
+
+\section{Popis současného řešení}
+Uživatel využívá aplikaci \emph{Track and Graph} [obrázek \ref{fig:track-app}] (ke stažení zde: \url{https://f-droid.org/en/packages/com.samco.trackandgraph/}).
+\begin{figure}[h]
+	\centering
+    	\includegraphics[scale=0.15]{trackgraph-pic}
+    \caption{\emph{Track and Graph} aplikace}
+    \label{fig:track-app}
+\end{figure}
+
+
+
+\section{Návrh zadání}
+V našem případě půjde o~znovuvytvoření již existující aplikace, modernizaci designu a~přidání chybějících funkcionalit.
+\subsection{Funkcionalita}
+Přidání kategorií pro lepší filtraci při vytváření grafů. Kategorie budou mít vlastní měrné jednotky (např. litry pro vypité pití) a další volitelné parametry.\\
+Toto by mělo směrovat k~lepším výstupům samotné aplikace a~tudíž k většímu zájmu o~používání aplikace.
+\subsection{Grafika}
+Modernizace stávající grafiky. Vytvoření menu ve kterém lze přidávat položky do databáze, či zobrazování grafů (které mohou být členěny do skupin).
+
+
+\section{Návrh řešení}
+TO-DO
 
 \end{document}
