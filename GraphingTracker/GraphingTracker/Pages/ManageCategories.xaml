@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GraphingTracker.ManageCategories"
+    xmlns:local="clr-namespace:GraphingTracker"
+    Title="Manage Categories"
+    >
+
+    <ContentPage.ToolbarItems> 
+    <ToolbarItem Text="Add"  Clicked="Button_Clicked"></ToolbarItem>
+</ContentPage.ToolbarItems>
+
+
+    <ContentPage.BindingContext>
+        <local:ManageCategoriesViewModel/>
+    </ContentPage.BindingContext>
+  <Grid>
+    
+  <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+     
+
+ 
+  </Grid.RowDefinitions> 
+    
+   
+
+   <ListView x:Name="llist"  ItemsSource="{Binding List}" Grid.Row="0" HeightRequest="300" ItemSelected="Selected">
+       <ListView.ItemTemplate>
+           <DataTemplate>
+               <ViewCell>
+                   <Grid>
+                       <Grid.ColumnDefinitions>
+                           <ColumnDefinition Width="*"/>
+                           <ColumnDefinition Width="7*"/>
+                       </Grid.ColumnDefinitions>
+                       
+                        <Label Text="{Binding Name} " Grid.Column="1"></Label>
+                        <Image Source="edit.png" Grid.Column="2">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="TapGestureRecognizer_Tapped_Edit"
+                                    CommandParameter="{Binding Name}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                       
+                       <Image Source="trash.png" Grid.Column="3">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="TapGestureRecognizer_Tapped_Remove"
+                                    CommandParameter="{Binding Name}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                   </Grid>
+                  
+               </ViewCell>
+           </DataTemplate>
+       </ListView.ItemTemplate>
+   </ListView>
+</Grid>
+</ContentPage>

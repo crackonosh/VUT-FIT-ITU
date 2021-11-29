@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.11
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphingTracker.Android", "GraphingTracker.Android\GraphingTracker.Android.csproj", "{97DDC6E2-C6B5-41E3-B32C-EE7958356B6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphingTracker", "GraphingTracker\GraphingTracker.csproj", "{CBDC0821-3152-4F31-8E80-69078E7AA4BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97DDC6E2-C6B5-41E3-B32C-EE7958356B6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97DDC6E2-C6B5-41E3-B32C-EE7958356B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97DDC6E2-C6B5-41E3-B32C-EE7958356B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97DDC6E2-C6B5-41E3-B32C-EE7958356B6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBDC0821-3152-4F31-8E80-69078E7AA4BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBDC0821-3152-4F31-8E80-69078E7AA4BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBDC0821-3152-4F31-8E80-69078E7AA4BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBDC0821-3152-4F31-8E80-69078E7AA4BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {641E26D8-B77B-4873-B2BC-E963CBEEBCC1}
+	EndGlobalSection
+EndGlobal

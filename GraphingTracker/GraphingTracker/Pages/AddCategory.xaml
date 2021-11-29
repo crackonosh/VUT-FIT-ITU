@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GraphingTracker.AddCategory"
+   Title="Add Category"
+    xmlns:local="clr-namespace:GraphingTracker">
+    <ContentPage.BindingContext>
+        <local:AddCategoryViewModel/>
+    </ContentPage.BindingContext>
+<StackLayout>
+
+<Label  Text="Category Name"
+        FontSize="Medium"
+        HorizontalOptions="Start"
+        VerticalOptions="Start"
+        Margin="20,20,0,0"
+        Grid.Row="0"
+        TextColor="#038aff"/>
+
+<Entry  Placeholder="Category Name"
+        Margin="20,0,20,0"
+        HeightRequest="50"
+        
+        Text="{Binding Category.Name}"/>
+
+<Label  Text="Preffered Units"
+        FontSize="Medium"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="CenterAndExpand"
+        
+        Grid.Row="0"
+        TextColor="#038aff"/>
+       
+<Picker
+        SelectedItem="0"
+        Margin="20,0,20,0"
+        HeightRequest="40"
+        TitleColor="#038aff"
+        x:Name="volume">
+        <Picker.Items>
+            <x:String>liter</x:String>
+            <x:String>cm3</x:String>
+            <x:String>mililiter</x:String>
+            <x:String>dm3</x:String>
+        </Picker.Items>   
+</Picker>
+<Picker
+        SelectedItem="0"
+        Margin="20,0,20,0"
+        HeightRequest="40"
+        TitleColor="#038aff"
+        x:Name="weight">
+        <Picker.Items>
+            <x:String>kg</x:String>
+            <x:String>g</x:String>
+            <x:String>ton</x:String>
+        </Picker.Items>   
+</Picker>
+<Picker
+        SelectedItem="0"
+        Margin="20,0,20,0"
+        HeightRequest="40"
+        TitleColor="#038aff"
+        x:Name="length">
+        <Picker.Items>
+            <x:String>mm</x:String>
+            <x:String>cm</x:String>
+            <x:String>dm</x:String>
+            <x:String>m</x:String>
+            <x:String>km</x:String>
+        </Picker.Items>   
+</Picker>
+
+<Picker
+        SelectedItem="0"
+        Margin="20,0,20,0"
+        HeightRequest="40"
+        TitleColor="#038aff"
+        x:Name="energy">
+        <Picker.Items>
+            <x:String>kcal</x:String>
+        </Picker.Items>   
+</Picker>
+
+    <Picker
+        SelectedItem="0"
+        Margin="20,0,20,0"
+        HeightRequest="40"
+        TitleColor="#038aff"
+        x:Name="count">
+        <Picker.Items>
+            <x:String>piece</x:String>
+        </Picker.Items>   
+</Picker>
+
+<Picker
+        SelectedItem="0"
+        Margin="20,0,20,0"
+        HeightRequest="40"
+        TitleColor="#038aff"
+        x:Name="area">
+        <Picker.Items>
+            <x:String>mm2</x:String>
+            <x:String>cm2</x:String>
+            <x:String>dm2</x:String>
+            <x:String>m2</x:String>
+            <x:String>km2</x:String>
+        </Picker.Items> 
+</Picker>
+
+<Picker
+        SelectedItem="0"
+        Margin="20,0,20,0"
+        HeightRequest="40"
+        TitleColor="#038aff"
+        x:Name="time">
+        <Picker.Items>
+            <x:String>seconds</x:String>
+            <x:String>hours</x:String>
+            <x:String>minutes</x:String>
+            <x:String>days</x:String>
+        </Picker.Items> 
+</Picker>
+
+
+<Button 
+        Text="Add"
+        WidthRequest="200"
+        HeightRequest="50"
+        CornerRadius="20"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="CenterAndExpand"
+        Clicked="Button_Clicked1"
+        
+        />
+<Button 
+        Text="Cancel"
+        WidthRequest="200"
+        HeightRequest="50"
+        CornerRadius="20"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="StartAndExpand"
+        Clicked="Button_Clicked"
+        />
+   
+     
+
+   
+ 
+</StackLayout>
+</ContentPage>
