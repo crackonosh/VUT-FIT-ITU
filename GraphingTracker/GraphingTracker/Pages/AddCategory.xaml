@@ -128,6 +128,8 @@
         Text="Add"
         WidthRequest="200"
         HeightRequest="50"
+        TextColor="white"
+        BackgroundColor="#038aff"
         CornerRadius="20"
         HorizontalOptions="CenterAndExpand"
         VerticalOptions="CenterAndExpand"
@@ -136,6 +138,10 @@
         />
 <Button 
         Text="Cancel"
+        TextColor="red"
+        BackgroundColor="white"
+        BorderColor="red"
+        BorderWidth="1"
         WidthRequest="200"
         HeightRequest="50"
         CornerRadius="20"

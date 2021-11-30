@@ -44,11 +44,10 @@ namespace GraphingTracker
             
         }
 
-        protected async void Button_Clicked5(System.Object sender, System.EventArgs e)
+        protected async void ImageButton_Clicked(System.Object sender, System.EventArgs e)
         {
 
             await Navigation.PushAsync(new AboutAppPage());
         }
-
     }
 }

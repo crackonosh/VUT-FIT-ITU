@@ -16,7 +16,7 @@
        
 <Picker   
         Margin="20,0,20,0"
-        HeightRequest="50"
+        HeightRequest="40"
         TitleColor="#038aff"
         SelectedIndex="0">
         <Picker.Items>
@@ -33,7 +33,7 @@
        
 <Entry  
         Margin="20,0,20,0"
-        HeightRequest="50">
+        HeightRequest="40">
         
 </Entry>
 
@@ -48,7 +48,7 @@
 <Entry  
         Margin="20,0,20,0"
          Keyboard="Numeric"
-        HeightRequest="50">
+        HeightRequest="40">
        
 </Entry>
 
@@ -62,7 +62,7 @@
        
 <Picker   
         Margin="20,0,20,0"
-        HeightRequest="50"
+        HeightRequest="40"
         TitleColor="#038aff"
         SelectedIndex="0">
         <Picker.Items>
@@ -71,6 +71,8 @@
 
 <Button Grid.Row="8"
         Text="Add"
+        TextColor="white"
+        BackgroundColor="#038aff"
         WidthRequest="200"
         HeightRequest="50"
         CornerRadius="20"
@@ -80,8 +82,12 @@
         />
 <Button Grid.Row="9"
         Text="Cancel"
+       
         WidthRequest="200"
-        HeightRequest="50"
+        TextColor="red"
+        BackgroundColor="white"
+        BorderColor="red"
+        BorderWidth="1"
         CornerRadius="20"
         HorizontalOptions="CenterAndExpand"
         VerticalOptions="StartAndExpand"

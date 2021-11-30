@@ -7,7 +7,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="First line string&#x0a;Second linestring&#x0a;Second"/>
+            <Image Source="logo2.png" WidthRequest="150" HeightRequest="100" HorizontalOptions ="Center" VerticalOptions="Center"/>
         </StackLayout>
-        
     </ContentPage.Content>
 </ContentPage>

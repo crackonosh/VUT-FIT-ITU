@@ -2,8 +2,70 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="GraphingTracker.AddItem">
-    <ContentPage.Content>
+    x:Class="GraphingTracker.AddItem"
+    xmlns:local="clr-namespace:GraphingTracker"
+    Title="Add Item">
+     <ContentPage.BindingContext>
+        <local:AddItemViewModel/>
+    </ContentPage.BindingContext>
+<StackLayout>
+    <Label  Text="Name"
+        FontSize="Medium"
+        HorizontalOptions="Start"
+        VerticalOptions="Start"
+        Margin="20,20,0,0"
+        Grid.Row="0"
+        TextColor="#038aff"/>
+       
+<Entry
+        Text="{Binding Item.Name}"
+        Margin="20,0,20,0"
+        HeightRequest="40">
         
-    </ContentPage.Content>
+        
+</Entry>
+
+       <Label  Text="Unit Value"
+        FontSize="Medium"
+        HorizontalOptions="Start"
+        VerticalOptions="Start"
+        Margin="20,20,0,0"
+        Grid.Row="0"
+        TextColor="#038aff"/>
+       
+<Entry
+        Text="{Binding IItem.Unit}"
+        Margin="20,0,20,0"
+        HeightRequest="40">
+        
+</Entry>
+
+<Button 
+        Text="Add"
+        WidthRequest="200"
+        HeightRequest="50"
+        TextColor="white"
+        BackgroundColor="#038aff"
+        CornerRadius="20"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="CenterAndExpand"
+        Clicked="Button_Clicked_2"
+        />
+
+   
+<Button 
+        Text="Cancel"
+        Margin="0,10,0,0"
+        WidthRequest="200"
+        TextColor="red"
+        BackgroundColor="white"
+        BorderColor="red"
+        BorderWidth="1"
+        CornerRadius="20"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="StartAndExpand"
+        Clicked="Button_Clicked"
+        />
+
+</StackLayout>
 </ContentPage>

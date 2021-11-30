@@ -35,8 +35,10 @@
                            <ColumnDefinition Width="*"/>
                            <ColumnDefinition Width="7*"/>
                        </Grid.ColumnDefinitions>
-                       
-                        <Label Text="{Binding Name} " Grid.Column="1"></Label>
+                       <Grid.RowDefinitions>
+                           <RowDefinition Height="50"/>
+                       </Grid.RowDefinitions>
+                        <Label TextColor="#038aff" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding Name} " Grid.Column="1"></Label>
                         <Image Source="edit.png" Grid.Column="2">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer

@@ -33,10 +33,17 @@ namespace GraphingTracker
         {
 
             CategoryInfo category = ((AddCategoryViewModel)BindingContext).Category;
+            if(category.Name == "\0")
+            {
+                DisplayAlert("Warning!", "You did not gave name to your category!", "Exit");
+            } else
+            {
+                MessagingCenter.Send(this, "AddCategory", category);
+                Navigation.PopAsync();
+            }
 
 
-            MessagingCenter.Send(this, "AddCategory", category);
-            Navigation.PopAsync();
+            
         }
 
         void Button_Clicked(System.Object sender, System.EventArgs e)

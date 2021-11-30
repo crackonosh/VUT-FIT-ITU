@@ -30,9 +30,9 @@
            HeightRequest="300" Margin="0,0,0,0"/>
         
 
-        <Image Margin="0,20,0,0" Source="logo2.png" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" ></Image>
+        <Image Margin="0,20,0,0" Source="logo2.png" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" ></Image>
        <Label TextColor="White" Text="...your best tracking friend..." FontSize="Medium" TextTransform="Lowercase" TextType="Html" Grid.Row="1" FontAttributes="Italic" VerticalOptions="Center" HorizontalOptions="Center"/>
-       <ImageButton Source="info.png" BackgroundColor="Transparent" Margin="0,5,5,0" Grid.Row="0" VerticalOptions="StartAndExpand" HorizontalOptions="End" WidthRequest="6" />
+       <ImageButton Source="info.png" BackgroundColor="Transparent" Margin="0,5,5,0" Grid.Row="0" VerticalOptions="StartAndExpand" HorizontalOptions="End" WidthRequest="50" Clicked="ImageButton_Clicked" />
 
      
        <Button
@@ -49,14 +49,14 @@
           Grid.Row="2"
           WidthRequest="150"
           HeightRequest="150"
-          Margin="45, 0, 0, 5"
+          Margin="49, 0, 0, 5"
           Clicked="Button_ClickedAsync"
           TextColor="#046dc9"
           BackgroundColor="White"
-          CornerRadius="25"/>
+          CornerRadius="20"/>
 
-           <Image  Grid.Row="2" Source="addrecord.png" Margin="85,15,0,0" VerticalOptions="Center" HorizontalOptions="StartAndExpand"
-                  HeightRequest="75" WidthRequest="75"></Image>
+           <ImageButton  Grid.Row="2" Source="addrecord.png" Margin="89,15,0,0" VerticalOptions="Center" HorizontalOptions="StartAndExpand"
+                  HeightRequest="75" WidthRequest="75" Clicked="Button_ClickedAsync" BackgroundColor="Transparent"></ImageButton>
        
       <Button
            xct:ShadowEffect.Color="Black"
@@ -65,17 +65,17 @@
           VerticalOptions="EndAndExpand"
           Grid.Row="2"
            Padding="0,80,0,0"
-          Margin="0, 0, 45, 5"
+          Margin="0, 0, 49, 5"
           WidthRequest="150"
           HeightRequest="150"
           Clicked="Button_ClickedAsync2"
           TextColor="#046dc9"
           BackgroundColor="White"
-          CornerRadius="25"
+          CornerRadius="20"
           />
 
-      <Image  Grid.Row="2" Source="graph.png" Margin="0,15,80,0" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
-                  HeightRequest="75" WidthRequest="75"></Image>
+      <ImageButton  Grid.Row="2" Source="graph.png" Margin="0,15,84,0" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                  HeightRequest="75" WidthRequest="75"  Clicked="Button_ClickedAsync2" BackgroundColor="Transparent" ></ImageButton>
 
            
    
@@ -90,13 +90,13 @@
           Padding="0,80,0,0"
           WidthRequest="150"
           HeightRequest="150"
-          Margin="45, 5, 0, 0"
+          Margin="49, 5, 0, 0"
           Clicked="Button_ClickedAsync3"
         TextColor="#046dc9"
           BackgroundColor="White"
-          CornerRadius="25"/>
-       <Image  Grid.Row="3" Source="managecategories.png" Margin="85,20,0,0" VerticalOptions="Start" HorizontalOptions="StartAndExpand"
-                  HeightRequest="75" WidthRequest="75"></Image>
+          CornerRadius="20"/>
+       <ImageButton  Grid.Row="3" Source="managecategories.png" Margin="89,20,0,0" VerticalOptions="Start" HorizontalOptions="StartAndExpand"
+                  HeightRequest="75" WidthRequest="75" Clicked="Button_ClickedAsync3" BackgroundColor="Transparent"></ImageButton>
 
        
       <Button
@@ -109,13 +109,13 @@
            Padding="0,80,0,0"
           WidthRequest="150"
           HeightRequest="150"
-          Margin="0, 5, 45, 0"
+          Margin="0, 5, 49, 0"
           Clicked="Button_ClickedAsync4"
           TextColor="#046dc9"
           BackgroundColor="White"
-          CornerRadius="25"/>
-       <Image  Grid.Row="3" Source="managerecords.png" Margin="0,20,80,0" VerticalOptions="Start" HorizontalOptions="EndAndExpand"
-                  HeightRequest="75" WidthRequest="75"></Image>
+          CornerRadius="20"/>
+       <ImageButton  Grid.Row="3" Source="managerecords.png" Margin="0,20,84,0" VerticalOptions="Start" HorizontalOptions="EndAndExpand"
+                  HeightRequest="75" WidthRequest="75" Clicked="Button_ClickedAsync4" BackgroundColor="Transparent"></ImageButton>
 
        
    </Grid>
