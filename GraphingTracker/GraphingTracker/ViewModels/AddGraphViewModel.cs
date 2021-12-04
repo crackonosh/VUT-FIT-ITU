@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -68,7 +68,7 @@ namespace GraphingTracker
 
     */
 
-    public class AddGraphViewModel
+    /*public class AddGraphViewModel
     {
         private GetGraph _graph;
 
@@ -107,9 +107,15 @@ namespace GraphingTracker
         {
             GraphChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+    }*/
+
+
+    public class AddGraphViewModel
+    {
+
     }
 
-    
+
 
 
 }

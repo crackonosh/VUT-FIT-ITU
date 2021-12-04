@@ -18,11 +18,12 @@ using System.Xml.Linq;
 namespace GraphingTracker
 
 {
-    
+
     class ManageGraphsViewModel
     {
 
-        List<Entry> entries = new List<Entry>
+
+        /*List<Entry> entries = new List<Entry>
         {
             new Entry(20)
             {
@@ -44,15 +45,18 @@ namespace GraphingTracker
                 Label = "ffl",
                 ValueLabel = "50"
             }
-        };
+        };*/
 
-        public ObservableCollection<GetGraph> List { get; set; }
+        //public ObservableCollection<GetGraph> List { get; set; }
 
 
 
         public ManageGraphsViewModel()
         {
-            List = new ObservableCollection<GetGraph>();
+
+
+
+            /*List = new ObservableCollection<GetGraph>();
             //List.Add(entries);
             Chart NewChart = new PieChart { Entries = entries };
             List.Add(new GetGraph() { Ppl = NewChart });
@@ -100,13 +104,13 @@ namespace GraphingTracker
 
 
 
-            });
-           
+            });*/
+
 
 
         }
 
-        
+
 
 
     }
@@ -114,7 +118,7 @@ namespace GraphingTracker
 
 
 
-    /*class ManageGraphsViewModel 
+    /*class ManageGraphsViewModel
     {
 
 
@@ -150,12 +154,12 @@ namespace GraphingTracker
 
 
             });
-            
+
 
 
         }
 
-        
+
 
 
     }*/
