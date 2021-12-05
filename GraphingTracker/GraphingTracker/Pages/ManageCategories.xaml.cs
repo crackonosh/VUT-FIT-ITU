@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿//****************************************************
+//ITU project 2021 - Graphing Tracker
+
+//@authors - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+//@date - 5.12.2021
+//****************************************************
 using GraphingTracker.Models;
-using GraphingTracker.Pages;
 using Xamarin.Forms;
-using static GraphingTracker.AddCategoryViewModel;
-using static GraphingTracker.AddCategory;
-using static GraphingTracker.ManageCategoriesViewModel;
-using System.Windows.Input;
 
 namespace GraphingTracker
 {
@@ -16,14 +14,13 @@ namespace GraphingTracker
         public ManageCategories()
         {
             InitializeComponent();
-   
+           
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
             catlist.ItemsSource = await App.Database.GetItemCategories();
-            
         }
 
         async void Button_Clicked(System.Object sender, System.EventArgs e)
@@ -56,8 +53,6 @@ namespace GraphingTracker
 
             await App.Database.RemoveItemCategory(plane);
             catlist.ItemsSource = await App.Database.GetItemCategories();
-           
-
   
         }
 

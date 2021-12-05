@@ -1,4 +1,10 @@
-﻿using GraphingTracker.Models;
+﻿//****************************************************
+//ITU project 2021 - Graphing Tracker
+
+//@authors - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+//@date - 5.12.2021
+//****************************************************
+using GraphingTracker.Models;
 using GraphingTracker.Pages;
 using Xamarin.Forms;
 
@@ -13,8 +19,6 @@ namespace GraphingTracker
             InitializeComponent();
 
         }
-
-
 
         protected override async void OnAppearing()
         {
@@ -43,5 +47,15 @@ namespace GraphingTracker
 
         }
 
+       
+        async void TapGestureRecognizer_Tapped_Remove(System.Object sender, System.EventArgs e)
+        {
+            var button = sender as Image;
+            var plane = button?.BindingContext as Graph;
+
+            await App.Database.RemoveGraph(plane);
+            graph_list.ItemsSource = await App.Database.GetGraphs();
+
+        }
     }
 }

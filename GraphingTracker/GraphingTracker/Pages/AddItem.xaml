@@ -1,13 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--****************************************************
+ITU project 2021 - Graphing Tracker
+
+@authors - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+@date - 5.12.2021
+****************************************************-->
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="GraphingTracker.AddItem"
     xmlns:local="clr-namespace:GraphingTracker"
     Title="Add Item">
-     <ContentPage.BindingContext>
-        <local:AddItemViewModel/>
-    </ContentPage.BindingContext>
+
 <StackLayout>
     <Label  Text="Name"
         FontSize="Medium"

@@ -1,9 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using GraphingTracker.Pages;
+﻿//****************************************************
+//ITU project 2021 - Graphing Tracker
+
+//@authors - Lukas Hais, xhaisl00@fit.vutbr.cz
+//         - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+//@date - 5.12.2021
+//****************************************************
 using Xamarin.Forms;
 using GraphingTracker.Models;
-using static GraphingTracker.AddItemViewModel;
 
 namespace GraphingTracker
 {
@@ -30,7 +33,7 @@ namespace GraphingTracker
             {
                 await App.Database.SaveItem(new Models.Item
                 {
-                    Value = int.Parse(unit_value.Text),
+                    Value = float.Parse(unit_value.Text),
                     Name = entry_name.Text,
                     UnitId = ((Models.Unit) picker_unit.SelectedItem).Id,
                     ItemCategoryId = _itemCategory.Id,
@@ -47,8 +50,6 @@ namespace GraphingTracker
         {
             Navigation.PopAsync();
         }
-
-     
 
     }
 }

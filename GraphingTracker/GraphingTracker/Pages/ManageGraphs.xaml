@@ -1,4 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--****************************************************
+ITU project 2021 - Graphing Tracker
+
+@authors - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+@date - 5.12.2021
+****************************************************-->
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -59,18 +65,16 @@
                                   </Label.GestureRecognizers>
                             </Label>
                            
-                              <Image Source="edit.png"   WidthRequest="50" HorizontalOptions="End">
-                                  <Image.GestureRecognizers>
+                            <Image Source="edit.png"   WidthRequest="50" HorizontalOptions="End">
+                                <Image.GestureRecognizers>
                                 <!--<TapGestureRecognizer
-                                    
-                                    Tapped="TapGestureRecognizer_Tapped_1"/>-->
+                                    Tapped="TapGestureRecognizer_Tapped_Edit"/>-->
                             </Image.GestureRecognizers>
-                              </Image>
-                               <Image Source="trash.png"  HeightRequest="50" WidthRequest="50" HorizontalOptions="End">
-                             <Image.GestureRecognizers>
-                                <!--<TapGestureRecognizer
-                                   
-                                    Tapped="TapGestureRecognizer_Tapped"/>-->
+                            </Image>
+                            <Image Source="trash.png"  HeightRequest="50" WidthRequest="50" HorizontalOptions="End">
+                                <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="TapGestureRecognizer_Tapped_Remove"/>
                             </Image.GestureRecognizers>
                         </Image>
                         </StackLayout>

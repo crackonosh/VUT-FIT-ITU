@@ -1,4 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--****************************************************
+ITU project 2021 - Graphing Tracker
+
+@authors - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+@date - 5.12.2021
+****************************************************-->
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
@@ -8,8 +14,7 @@
         
    <Grid RowSpacing="0" ColumnSpacing="0">
 
-       <Grid.Background>
-           
+       <Grid.Background>   
            <LinearGradientBrush EndPoint="0,1">
                <GradientStop Color="#038aff"
                                Offset="0.3" />
@@ -17,43 +22,61 @@
                                Offset="1.0" />            
            </LinearGradientBrush>
        </Grid.Background>
+
        <Grid.RowDefinitions>
            <RowDefinition Height="230"/>
            <RowDefinition Height="25"/>
            <RowDefinition Height="*"/>
-           <RowDefinition Height="*"/>
-           
+           <RowDefinition Height="*"/>  
        </Grid.RowDefinitions>
               
      
-       <Rectangle Grid.Row="0" BackgroundColor="#038aff"  WidthRequest="100"
-           HeightRequest="300" Margin="0,0,0,0"/>
+       <Rectangle
+            Grid.Row="0"
+            BackgroundColor="#038aff"
+            WidthRequest="100"
+            HeightRequest="300"
+            Margin="0,0,0,0"/>
         
+        <Image Margin="0,20,0,0"
+               Source="logo2.png"
+               Grid.Row="0"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Center"/>
 
-        <Image Margin="0,20,0,0" Source="logo2.png" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" ></Image>
-       <Label TextColor="White" Text="-sem jeste neco doplnim-" FontSize="Medium" TextTransform="Lowercase" TextType="Html" Grid.Row="1" FontAttributes="Italic" VerticalOptions="Center" HorizontalOptions="Center"/>
-       <ImageButton Source="info.png" BackgroundColor="Transparent" Margin="0,5,5,0" Grid.Row="0" VerticalOptions="StartAndExpand" HorizontalOptions="End" WidthRequest="50" Clicked="ImageButton_Clicked" />
+        <Label TextColor="White"
+               Text="...your best tracking friend..."
+               FontSize="Medium"
+               TextTransform="Lowercase"
+               TextType="Html" Grid.Row="1"
+               FontAttributes="Italic"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
 
-     
+       <ImageButton
+               Source="info.png"
+               BackgroundColor="Transparent"
+               Margin="0,5,5,0"
+               Grid.Row="0"
+               VerticalOptions="StartAndExpand"
+               HorizontalOptions="End"
+               WidthRequest="50"
+               Clicked="ImageButton_Clicked" />
        <Button
-          xct:ShadowEffect.Color="Black"
-          Text="Add Record"
- 
-           
-
-          
-            ContentLayout="Top, 0"
-          HorizontalOptions="StartAndExpand"
-          VerticalOptions="EndAndExpand"
-           Padding="0,80,0,0"
-          Grid.Row="2"
-          WidthRequest="150"
-          HeightRequest="150"
-          Margin="49, 0, 0, 5"
-          Clicked="Button_ClickedAsync"
-          TextColor="#046dc9"
-          BackgroundColor="White"
-          CornerRadius="20"/>
+              xct:ShadowEffect.Color="Black"
+              Text="Add Record"
+              ContentLayout="Top, 0"
+              HorizontalOptions="StartAndExpand"
+              VerticalOptions="EndAndExpand"
+              Padding="0,80,0,0"
+              Grid.Row="2"
+              WidthRequest="150"
+              HeightRequest="150"
+              Margin="49, 0, 0, 5"
+              Clicked="Button_ClickedAsync"
+              TextColor="#046dc9"
+              BackgroundColor="White"
+              CornerRadius="20"/>
 
            <ImageButton  Grid.Row="2" Source="addrecord.png" Margin="89,15,0,0" VerticalOptions="Center" HorizontalOptions="StartAndExpand"
                   HeightRequest="75" WidthRequest="75" Clicked="Button_ClickedAsync" BackgroundColor="Transparent"></ImageButton>

@@ -1,4 +1,10 @@
-﻿using System.Collections.Generic;
+﻿//****************************************************
+//ITU project 2021 - Graphing Tracker
+
+//@authors - Lukas Hais, xhaisl00@fit.vutbr.cz
+//@date - 5.12.2021
+//****************************************************
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using SQLite;
 using GraphingTracker.Models;
@@ -398,6 +404,11 @@ namespace GraphingTracker
         public Task<int> SaveGraph(Graph graph)
         {
             return _database.InsertAsync(graph);
+        }
+
+        public Task<int> RemoveGraph(Graph graph)
+        {
+            return _database.DeleteAsync(graph);
         }
 
         /************ GRAPH ITEM ************/

@@ -1,4 +1,11 @@
-﻿using Xamarin.Forms;
+﻿//****************************************************
+//ITU project 2021 - Graphing Tracker
+
+//@authors - Lukas Hais, xhaisl00@fit.vutbr.cz
+//         - Tadeas Kachyma, xkachy00fit.vutbr.cz
+//@date - 5.12.2021
+//****************************************************
+using Xamarin.Forms;
 
 namespace GraphingTracker
 {
@@ -50,18 +57,13 @@ namespace GraphingTracker
             else
             {
                 await DisplayAlert("Warning", "You have to fill all fields for the item to added!", "Close");
-            }
-
-           
+            }  
         }
 
         async void Button_Clicked_Cancel(System.Object sender, System.EventArgs e)
         {
             await Navigation.PopAsync();
         }
-
     }
-
-
 }
 

@@ -1,6 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿//****************************************************
+//ITU project 2021 - Graphing Tracker
 
+//@authors - Lukas Hais, xhaisl00@fit.vutbr.cz
+//         - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+//@date - 5.12.2021
+//****************************************************
+using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace GraphingTracker.Pages

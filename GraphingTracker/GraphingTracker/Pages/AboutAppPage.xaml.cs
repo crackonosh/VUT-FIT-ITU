@@ -1,8 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿//****************************************************
+//ITU project 2021 - Graphing Tracker
 
+//@authors - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+//@date - 5.12.2021
+//****************************************************
 using Xamarin.Forms;
-
 namespace GraphingTracker
 {
     public partial class AboutAppPage : ContentPage

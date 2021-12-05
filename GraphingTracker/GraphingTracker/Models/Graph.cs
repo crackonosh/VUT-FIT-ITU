@@ -1,4 +1,10 @@
-﻿using System;
+﻿//****************************************************
+//ITU project 2021 - Graphing Tracker
+
+//@authors - Lukas Hais, xhaisl00@fit.vutbr.cz
+//@date - 5.12.2021
+//****************************************************
+using System;
 using SQLite;
 namespace GraphingTracker.Models
 {

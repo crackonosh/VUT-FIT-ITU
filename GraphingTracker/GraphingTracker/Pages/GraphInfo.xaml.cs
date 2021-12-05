@@ -1,4 +1,10 @@
-﻿using System;
+﻿//****************************************************
+//ITU project 2021 - Graphing Tracker
+
+//@authors - Lukas Neupaer
+//@date - 5.12.2021
+//****************************************************
+using System;
 using System.Collections.Generic;
 using GraphingTracker.Models;
 using Xamarin.Forms;

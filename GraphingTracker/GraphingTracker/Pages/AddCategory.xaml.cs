@@ -1,4 +1,10 @@
-﻿using System;
+﻿//****************************************************
+//ITU project 2021 - Graphing Tracker
+
+//@authors - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+//@date - 5.12.2021
+//****************************************************
+using System;
 using GraphingTracker.Models;
 using Xamarin.Forms;
 namespace GraphingTracker
@@ -9,7 +15,6 @@ namespace GraphingTracker
         public AddCategory()
         {
             InitializeComponent();
- 
         }
 
         protected override async void OnAppearing()

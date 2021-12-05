@@ -1,4 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--****************************************************
+ITU project 2021 - Graphing Tracker
+
+@authors - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+@date - 5.12.2021
+****************************************************-->
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -41,10 +47,10 @@
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                                 
                             <Label VerticalOptions="CenterAndExpand" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextColor="#038aff" WidthRequest="300" 
-                            FontSize="20"
-                            Text="{Binding Count}"/>
+                            FontSize="20" x:Name="bbb"
+                           />
                            
-                              <Image Source="edit.png"   WidthRequest="50" HorizontalOptions="End">
+                              <Image Source="edit.png"   WidthRequest="50"  HorizontalOptions="End">
                                   <Image.GestureRecognizers>
                                 <TapGestureRecognizer
                                    

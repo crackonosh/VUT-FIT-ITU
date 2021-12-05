@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GraphingTracker.Pages;
-using Xamarin.CommunityToolkit.Extensions;
+﻿//****************************************************
+//ITU project 2021 - Graphing Tracker
+
+//@authors - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+//@date - 5.12.2021
+//****************************************************
+using System;
 using Xamarin.Forms;
 
 namespace GraphingTracker
@@ -40,7 +39,6 @@ namespace GraphingTracker
         {
 
             await Navigation.PushAsync(new ManageRecords());
-            
         }
 
         protected async void ImageButton_Clicked(System.Object sender, System.EventArgs e)

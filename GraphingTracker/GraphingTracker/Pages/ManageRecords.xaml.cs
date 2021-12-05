@@ -10,13 +10,15 @@ namespace GraphingTracker
         public ManageRecords()
         {
             InitializeComponent();
+            
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
             recordlist.ItemsSource = await App.Database.GetItemRecords();
-
+           
+            
         }
 
         ItemRecord item;

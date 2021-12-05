@@ -1,4 +1,11 @@
-﻿using System;
+﻿//****************************************************
+//ITU project 2021 - Graphing Tracker
+
+//@authors - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+//@date - 5.12.2021
+//****************************************************
+
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -22,14 +29,11 @@ namespace GraphingTracker
 
                 return database;
             }
-        }
-
-        
+        }    
 
         public App()
         {
-            
-
+           
             MainPage = new NavigationPage(new MainPage());
         }
 
