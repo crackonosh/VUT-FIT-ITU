@@ -2,39 +2,45 @@
 using System.Collections.Generic;
 using GraphingTracker.Pages;
 using Xamarin.Forms;
+using GraphingTracker.Models;
 using static GraphingTracker.AddItemViewModel;
 
 namespace GraphingTracker
 {
     public partial class AddItem : ContentPage
     {
-        public AddItem(Item item = null)
+        private ItemCategory _itemCategory;
+
+        public AddItem(ItemCategory itemCategory)
         {
             InitializeComponent();
-
-            if(item != null)
-            {
-                ((AddItemViewModel)BindingContext).IItem = item;
-            }
-
+            _itemCategory = itemCategory;
         }
 
-        
-
-       
-
-        void Button_Clicked_2(System.Object sender, System.EventArgs e)
+        protected override async void OnAppearing()
         {
-            Item item = ((AddItemViewModel)BindingContext).IItem;
-            if (item.Name == "\0")
-            {
+            base.OnAppearing();
+            picker_unit.ItemsSource = await App.Database.GetUnitsForCategory(_itemCategory.UnitCategoryId);
+            picker_unit.SelectedIndex = 0;
+        }
 
-            }
-            else
+        async void Button_Clicked_2(System.Object sender, System.EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(entry_name.Text) && !string.IsNullOrWhiteSpace(unit_value.Text))
             {
-                MessagingCenter.Send(this, "AddItem", item);
-                Navigation.PopAsync();
-            }
+                await App.Database.SaveItem(new Models.Item
+                {
+                    Value = int.Parse(unit_value.Text),
+                    Name = entry_name.Text,
+                    UnitId = ((Models.Unit) picker_unit.SelectedItem).Id,
+                    ItemCategoryId = _itemCategory.Id,
+                    UnitCategoryId = _itemCategory.UnitCategoryId
+                });
+
+                name.Text = string.Empty;
+                await Navigation.PopAsync();
+
+            };
         }
 
         void Button_Clicked(System.Object sender, System.EventArgs e)

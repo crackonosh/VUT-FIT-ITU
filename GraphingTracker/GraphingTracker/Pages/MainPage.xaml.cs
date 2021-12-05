@@ -19,7 +19,6 @@ namespace GraphingTracker
 
         }
 
-       
         protected async void Button_ClickedAsync(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AddRecord());

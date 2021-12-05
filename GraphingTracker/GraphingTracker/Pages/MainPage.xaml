@@ -31,7 +31,7 @@
         
 
         <Image Margin="0,20,0,0" Source="logo2.png" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" ></Image>
-       <Label TextColor="White" Text="...your best tracking friend..." FontSize="Medium" TextTransform="Lowercase" TextType="Html" Grid.Row="1" FontAttributes="Italic" VerticalOptions="Center" HorizontalOptions="Center"/>
+       <Label TextColor="White" Text="-sem jeste neco doplnim-" FontSize="Medium" TextTransform="Lowercase" TextType="Html" Grid.Row="1" FontAttributes="Italic" VerticalOptions="Center" HorizontalOptions="Center"/>
        <ImageButton Source="info.png" BackgroundColor="Transparent" Margin="0,5,5,0" Grid.Row="0" VerticalOptions="StartAndExpand" HorizontalOptions="End" WidthRequest="50" Clicked="ImageButton_Clicked" />
 
      

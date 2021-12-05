@@ -4,17 +4,28 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="GraphingTracker.Pages.AddGraph"
     Title="Add Graph">
-<StackLayout>
 
+<Grid>
+        <Grid.Background>
+           <LinearGradientBrush EndPoint="0,1">
+               <GradientStop Color="#038aff"
+                               Offset="0.3" />
+               <GradientStop Color="#d896ff"
+                               Offset="1.0" />            
+           </LinearGradientBrush>
+       </Grid.Background>
+    <Frame WidthRequest="150" CornerRadius="50" Margin="20" HeightRequest="300" BackgroundColor="white">
+        <StackLayout>
 <Label  Text="Graph Name"
         FontSize="Medium"
         HorizontalOptions="Start"
         VerticalOptions="Start"
-        Margin="20,20,0,0"
+        Margin="20,5,0,0"
         TextColor="#038aff"/>
      
 <Entry  
         Margin="20,0,20,0"
+        x:Name="graph_name_entry"
         HeightRequest="40">
         
 </Entry>
@@ -26,12 +37,34 @@
         Margin="20,20,0,0"
         TextColor="#038aff"/>
        
-<Picker   
+<Picker
+        x:Name="category_picker"
+        ItemDisplayBinding="{Binding Name}"
         Margin="20,0,20,0"
         HeightRequest="40"
         TitleColor="#038aff"
         SelectedIndex="0">
         <Picker.Items>
+            <x:String ></x:String>
+        </Picker.Items>   
+</Picker>
+
+<Label  Text="Preferred Unit"
+        FontSize="Medium"
+        HorizontalOptions="Start"
+        VerticalOptions="Start"
+        Margin="20,20,0,0"
+        TextColor="#038aff"/>
+       
+<Picker
+        x:Name="category_unit_picker"
+        ItemDisplayBinding="{Binding Name}"
+        Margin="20,0,20,0"
+        HeightRequest="40"
+        TitleColor="#038aff"
+        SelectedIndex="0">
+        <Picker.Items>
+            <x:String ></x:String>
         </Picker.Items>   
 </Picker>
 
@@ -46,27 +79,13 @@
         Margin="20,0,20,0"
         HeightRequest="40"
         TitleColor="#038aff"
+        x:Name="graph_type_picker"
         SelectedIndex="0">
         <Picker.Items>
+            <x:String>Pie</x:String>
+            <x:String>Bar</x:String>
         </Picker.Items>   
 </Picker>
-
-
-<Label  Text="Time Range"
-        FontSize="Medium"
-        HorizontalOptions="Start"
-        VerticalOptions="Start"
-        Margin="20,20,0,0"
-        Grid.Row="0"
-        TextColor="#038aff"/>
-       
-<TimePicker Time="00:00:00"
-            Margin="20,0,20,0"
-             HeightRequest="50"
-            WidthRequest="40"/>
-<TimePicker Time="00:00:00"
-            Margin="20,0,20,0"
-            HeightRequest="50"/>
 
 
 <Button Text="Add"
@@ -75,6 +94,7 @@
         BackgroundColor="#038aff"
         HeightRequest="50"
         CornerRadius="20"
+        Clicked="Button_Clicked_2"
         HorizontalOptions="CenterAndExpand"
         VerticalOptions="CenterAndExpand"
         />
@@ -93,4 +113,6 @@
         />
    
 </StackLayout>
+       </Frame>
+        </Grid>
 </ContentPage>

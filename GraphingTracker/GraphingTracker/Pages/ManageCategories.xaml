@@ -7,58 +7,84 @@
     Title="Manage Categories"
     >
 
-    <ContentPage.ToolbarItems> 
+<ContentPage.ToolbarItems> 
     <ToolbarItem Text="Add"  Clicked="Button_Clicked"></ToolbarItem>
 </ContentPage.ToolbarItems>
 
 
-    <ContentPage.BindingContext>
-        <local:ManageCategoriesViewModel/>
-    </ContentPage.BindingContext>
-  <Grid>
-    
-  <Grid.RowDefinitions>
-      <RowDefinition Height="*" />
-     
+<ContentPage.BindingContext>
+    <local:ManageCategoriesViewModel/>
+</ContentPage.BindingContext>
 
- 
-  </Grid.RowDefinitions> 
-    
-   
+<Grid>
+    <Grid.Background>
+           
+           <LinearGradientBrush EndPoint="0,1">
+               <GradientStop Color="#038aff"
+                               Offset="0.3" />
+               <GradientStop Color="#d896ff"
+                               Offset="1.0" />            
+           </LinearGradientBrush>
+        </Grid.Background>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+    </Grid.RowDefinitions> 
 
-   <ListView x:Name="llist"  ItemsSource="{Binding List}" Grid.Row="0" HeightRequest="300" ItemSelected="Selected">
+    <ListView  WidthRequest="80"
+               x:Name="catlist"
+               HasUnevenRows="True"
+               ItemsSource="{Binding List}"
+         
+               Grid.Row="0"
+               ItemSelected="catlist_ItemSelected"
+               BackgroundColor="Transparent"
+               SeparatorVisibility="None" RowHeight="70">
+
        <ListView.ItemTemplate>
            <DataTemplate>
                <ViewCell>
-                   <Grid>
-                       <Grid.ColumnDefinitions>
-                           <ColumnDefinition Width="*"/>
-                           <ColumnDefinition Width="7*"/>
-                       </Grid.ColumnDefinitions>
-                       <Grid.RowDefinitions>
-                           <RowDefinition Height="50"/>
-                       </Grid.RowDefinitions>
-                        <Label TextColor="#038aff" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding Name} " Grid.Column="1"></Label>
-                        <Image Source="edit.png" Grid.Column="2">
-                            <Image.GestureRecognizers>
+                   <Grid Padding="10">
+                        <StackLayout HorizontalOptions="Center">  
+                           
+                      
+                        <Frame CornerRadius="25" WidthRequest ="350" HeightRequest="40" HasShadow="True"  >
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                
+                            <Label VerticalOptions="CenterAndExpand" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextColor="#038aff" WidthRequest="300" 
+                            FontSize="20"
+                                   
+                            Text="{Binding Name}">
+                                <Label.GestureRecognizers>
+                                   <TapGestureRecognizer
+                                       NumberOfTapsRequired="2"
+                                       Tapped="TapGestureRecognizer_Tapped_2">
+                                       
+                                   </TapGestureRecognizer>
+                                  </Label.GestureRecognizers>
+                            </Label>
+                           
+                              <Image Source="edit.png"   WidthRequest="50" HorizontalOptions="End">
+                                  <Image.GestureRecognizers>
                                 <TapGestureRecognizer
-                                    Tapped="TapGestureRecognizer_Tapped_Edit"
-                                    CommandParameter="{Binding Name}"/>
+                                    
+                                    Tapped="TapGestureRecognizer_Tapped_1"/>
+                            </Image.GestureRecognizers>
+                              </Image>
+                               <Image Source="trash.png"  HeightRequest="50" WidthRequest="50" HorizontalOptions="End">
+                             <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                   
+                                    Tapped="TapGestureRecognizer_Tapped"/>
                             </Image.GestureRecognizers>
                         </Image>
-                       
-                       <Image Source="trash.png" Grid.Column="3">
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer
-                                    Tapped="TapGestureRecognizer_Tapped_Remove"
-                                    CommandParameter="{Binding Name}"/>
-                            </Image.GestureRecognizers>
-                        </Image>
+                        </StackLayout>
+                        </Frame>
+                       </StackLayout>
                    </Grid>
-                  
-               </ViewCell>
-           </DataTemplate>
-       </ListView.ItemTemplate>
-   </ListView>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+     
 </Grid>
 </ContentPage>

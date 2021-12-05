@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="GraphingTracker.CatInfo"
     xmlns:local="clr-namespace:GraphingTracker"
-    Title="Category Info">
+    >
 
 
     <ContentPage.ToolbarItems> 
@@ -15,8 +15,8 @@
         <local:CatInfoViewModel/>
     </ContentPage.BindingContext>
   <StackLayout>
-      <Label x:Name="lblName"></Label>
-      <ListView x:Name="llist"  ItemsSource="{Binding ItemList}" Grid.Row="1" HeightRequest="300" >
+      <Label x:Name="lblName" ></Label>
+      <ListView x:Name="llist" Grid.Row="1" HeightRequest="300" >
        <ListView.ItemTemplate>
            <DataTemplate>
                <ViewCell>
@@ -27,7 +27,6 @@
                        </Grid.ColumnDefinitions>
                        
                         <Label Text="{Binding Name} " VerticalOptions="Start" Grid.Column="1"></Label>
-                        <Label Text="{Binding Unit} " VerticalOptions="End" Grid.Column="1"></Label>
                         <Image Source="edit.png" Grid.Column="2">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="TapGestureRecognizer_edit"

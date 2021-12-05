@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using GraphingTracker.Models;
 using Xamarin.Forms;
 using static GraphingTracker.AddItemViewModel;
 
@@ -8,36 +9,34 @@ namespace GraphingTracker
 {
     public partial class CatInfo : ContentPage
     {
+        private ItemCategory _category { get; set; }
      
-        public CatInfo(string name)
+        public CatInfo(ItemCategory category)
         {
             InitializeComponent();
-            lblName.Text = name;
-
-            
+            Title = category.Name;
+            _category = category;
         }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            llist.ItemsSource = await App.Database.GetItemsForCategory(_category.UnitCategoryId);
+        }
+
 
         private void Button_Clicked(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new AddItem());
+            Navigation.PushAsync(new AddItem(_category));
         }
 
         void TapGestureRecognizer_edit(System.Object sender, System.EventArgs e)
         {
-            TappedEventArgs tappedEventArgs = (TappedEventArgs)e;
-
-            Item item = ((CatInfoViewModel)BindingContext).ItemList.Where(emp => emp.Name == (string)tappedEventArgs.Parameter).FirstOrDefault();
-
-            Navigation.PushAsync(new AddItem(item));
+            
         }
 
         void TapGestureRecognizer_delete(System.Object sender, System.EventArgs e)
         {
-            TappedEventArgs tappedEventArgs = (TappedEventArgs)e;
-
-            Item item = ((CatInfoViewModel)BindingContext).ItemList.Where(emp => emp.Name == (string)tappedEventArgs.Parameter).FirstOrDefault();
-
-            ((CatInfoViewModel)BindingContext).ItemList.Remove(item); 
         }
     }
 }

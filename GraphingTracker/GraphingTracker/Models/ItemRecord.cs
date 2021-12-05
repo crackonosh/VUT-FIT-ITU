@@ -7,6 +7,8 @@ namespace GraphingTracker.Models
         public int Id { get; set; }
         [Indexed]
         public int ItemId { get; set; }
+        [Indexed]
+        public int ItemCategoryId { get; set; }
         public int Count { get; set; }
     }
 }

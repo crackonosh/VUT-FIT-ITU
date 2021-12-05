@@ -1,4 +1,6 @@
-﻿using SQLite;
+﻿using System;
+using System.Collections.Generic;
+using SQLite;
 namespace GraphingTracker.Models
 {
     public class Item
@@ -8,6 +10,10 @@ namespace GraphingTracker.Models
         public string Name { get; set; }
         public float Value { get; set; }
         [Indexed]
-        public int UnitID { get; set; }
+        public int UnitId { get; set; }
+        [Indexed]
+        public int ItemCategoryId { get; set; }
+        [Indexed]
+        public int UnitCategoryId { get; set; }
     }
 }

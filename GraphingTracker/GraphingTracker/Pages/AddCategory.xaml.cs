@@ -1,55 +1,44 @@
 ﻿using System;
-using System.Collections.Generic;
-using GraphingTracker.Pages;
-
+using GraphingTracker.Models;
 using Xamarin.Forms;
-using static GraphingTracker.AddCategoryViewModel;
-
 namespace GraphingTracker
 {
     public partial class AddCategory : ContentPage
     {
-        
-        public AddCategory(CategoryInfo category = null) 
+
+        public AddCategory()
         {
             InitializeComponent();
-            volume.SelectedIndex = 0;
-            weight.SelectedIndex = 0;
-            length.SelectedIndex = 1;
-            energy.SelectedIndex = 0;
-            count.SelectedIndex = 0;
-            area.SelectedIndex = 1;
-            time.SelectedIndex = 2;
-
-
-            if(category != null)
-            {
-                ((AddCategoryViewModel)BindingContext).Category = category;
-            }    
+ 
         }
 
-
-        void Button_Clicked1(System.Object sender, System.EventArgs e)
+        protected override async void OnAppearing()
         {
+            base.OnAppearing();
+            pick_unit_category.ItemsSource = await App.Database.GetUnitCategories();
+            pick_unit_category.SelectedIndex = 0;
+        }
 
-            CategoryInfo category = ((AddCategoryViewModel)BindingContext).Category;
-            if(category.Name == "\0")
+        async void Button_Clicked1(object sender, EventArgs e)
+        {
+           
+            if (!string.IsNullOrWhiteSpace(category_name.Text))
             {
-                DisplayAlert("Warning!", "You did not gave name to your category!", "Exit");
-            } else
-            {
-                MessagingCenter.Send(this, "AddCategory", category);
-                Navigation.PopAsync();
+                await App.Database.SaveItemCategory(new ItemCategory
+                {
+                    Name = category_name.Text,
+                    UnitCategoryId = ((UnitCategory) pick_unit_category.SelectedItem).Id,
+                }) ;
+
+                  category_name.Text = string.Empty; 
             }
 
-
-            
+            await Navigation.PopAsync();
         }
 
-        void Button_Clicked(System.Object sender, System.EventArgs e)
+        void Button_Clicked(object sender, EventArgs e)
         {
             Navigation.PopAsync();
         }
-
     }
 }

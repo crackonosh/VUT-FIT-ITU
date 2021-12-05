@@ -3,9 +3,20 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="GraphingTracker.AddRecord"
-    Title="Add Record">
-<StackLayout>
-
+    Title="Add Record"
+   >
+    <Grid>
+        <Grid.Background>
+           <LinearGradientBrush EndPoint="0,1">
+               <GradientStop Color="#038aff"
+                               Offset="0.3" />
+               <GradientStop Color="#d896ff"
+                               Offset="1.0" />            
+           </LinearGradientBrush>
+       </Grid.Background>
+    <Frame WidthRequest="150" CornerRadius="50" Margin="20" HeightRequest="300" BackgroundColor="white">
+<StackLayout> 
+    
 <Label  Text="Category"
         FontSize="Medium"
         HorizontalOptions="Start"
@@ -13,13 +24,17 @@
         Margin="20,20,0,0"
         Grid.Row="0"
         TextColor="#038aff"/>
-       
-<Picker   
+
+<Picker x:Name="category_picker"
+          
+        ItemDisplayBinding="{Binding Name}"
         Margin="20,0,20,0"
         HeightRequest="40"
         TitleColor="#038aff"
         SelectedIndex="0">
+        
         <Picker.Items>
+            <x:String ></x:String>
         </Picker.Items>   
 </Picker>
 
@@ -28,14 +43,21 @@
         HorizontalOptions="Start"
         VerticalOptions="Start"
         Margin="20,20,0,0"
+       
         Grid.Row="0"
         TextColor="#038aff"/>
        
-<Entry  
+<Picker 
         Margin="20,0,20,0"
-        HeightRequest="40">
-        
-</Entry>
+        HeightRequest="40"
+        ItemDisplayBinding="{Binding Name}"
+        TitleColor="#038aff"
+        x:Name="item_picker"
+        SelectedIndex="0">
+       
+        <Picker.Items>
+        </Picker.Items>   
+</Picker>
 
 <Label  Text="Counter"
         FontSize="Medium"
@@ -45,29 +67,14 @@
         Grid.Row="0"
         TextColor="#038aff"/>
        
-<Entry  
+<Entry
+        x:Name="counter"
         Margin="20,0,20,0"
          Keyboard="Numeric"
         HeightRequest="40">
        
 </Entry>
 
-<Label  Text="Unit Value"
-        FontSize="Medium"
-        HorizontalOptions="Start"
-        VerticalOptions="Start"
-        Margin="20,20,0,0"
-        Grid.Row="0"
-        TextColor="#038aff"/>
-       
-<Picker   
-        Margin="20,0,20,0"
-        HeightRequest="40"
-        TitleColor="#038aff"
-        SelectedIndex="0">
-        <Picker.Items>
-        </Picker.Items>   
-</Picker>
 
 <Button Grid.Row="8"
         Text="Add"
@@ -78,11 +85,12 @@
         CornerRadius="20"
         HorizontalOptions="CenterAndExpand"
         VerticalOptions="CenterAndExpand"
+        Clicked="Button_Clicked_Add"
         
         />
 <Button Grid.Row="9"
         Text="Cancel"
-       
+        Clicked="Button_Clicked_Cancel"
         WidthRequest="200"
         TextColor="red"
         BackgroundColor="white"
@@ -91,8 +99,9 @@
         CornerRadius="20"
         HorizontalOptions="CenterAndExpand"
         VerticalOptions="StartAndExpand"
-        Clicked="Button_Clicked"
         />
    
 </StackLayout>
+        </Frame>
+        </Grid>
 </ContentPage>

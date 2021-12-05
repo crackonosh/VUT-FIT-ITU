@@ -15,15 +15,40 @@
         VerticalOptions="Start"
         Margin="20,20,0,0"
         Grid.Row="0"
+        x:Name="name"
         TextColor="#038aff"/>
        
 <Entry
         Text="{Binding Item.Name}"
         Margin="20,0,20,0"
+        x:Name="entry_name"
         HeightRequest="40">
         
         
 </Entry>
+
+    <Label x:Name="label_unit"
+        Text="Unit"
+        FontSize="Medium"
+        HorizontalOptions="Start"
+        VerticalOptions="Start"
+        Margin="20,20,0,0"
+        Grid.Row="0"
+        TextColor="#038aff" />
+
+
+    <Picker x:Name="picker_unit"
+          
+        ItemDisplayBinding="{Binding Name}"
+        Margin="20,0,20,0"
+        HeightRequest="40"
+        TitleColor="#038aff"
+        SelectedIndex="0">
+        
+        <Picker.Items>
+            <x:String ></x:String>
+        </Picker.Items>   
+</Picker>
 
        <Label  Text="Unit Value"
         FontSize="Medium"
@@ -34,6 +59,7 @@
         TextColor="#038aff"/>
        
 <Entry
+         x:Name="unit_value"
         Text="{Binding IItem.Unit}"
         Margin="20,0,20,0"
         HeightRequest="40">
