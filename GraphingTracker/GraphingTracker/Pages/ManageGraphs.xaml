@@ -25,7 +25,7 @@
   </Grid.RowDefinitions>
 
 
-
+<!--
    <ListView x:Name="llist"  ItemsSource="{Binding List}" Grid.Row="0" HeightRequest="300" >
        <ListView.ItemTemplate>
            <DataTemplate>
@@ -38,7 +38,7 @@
                        <Grid.RowDefinitions>
                            <RowDefinition Height="*"/>
                        </Grid.RowDefinitions>
-                       <!--<Label TextColor="#038aff" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding Name} " Grid.Column="1"></Label>-->
+                       <Label TextColor="#038aff" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding Name} " Grid.Column="1"></Label>
                         <forms:ChartView Chart="{Binding Name}" HeightRequest="150" Grid.Column="1"/>
                        <Image Source="edit.png" Grid.Column="2">
                             <Image.GestureRecognizers>
@@ -61,7 +61,27 @@
            </DataTemplate>
        </ListView.ItemTemplate>
    </ListView>
-   <!--<forms:ChartView x:Name="Chart1" HeightRequest="150" />-->
+   <forms:ChartView x:Name="Chart1" HeightRequest="150" />
+     -->
+
+
+      <ListView x:Name="MyListview" RowHeight="400">
+        <ListView.ItemTemplate>
+            <DataTemplate >
+                <ViewCell >
+                    <StackLayout >
+                        <forms:ChartView  HeightRequest="400" Chart="{Binding ChartData}"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
+
+
+
+
 
 </Grid>
 
