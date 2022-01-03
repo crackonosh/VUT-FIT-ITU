@@ -1,7 +1,7 @@
 ﻿//****************************************************
 //ITU project 2021 - Graphing Tracker
 
-//@authors - Lukas Neupaer
+//@authors - Lukas Neupauer
 //@date - 5.12.2021
 //****************************************************
 using System;
@@ -57,6 +57,9 @@ namespace GraphingTracker
             }
         }
 
+        public SKColor TextColor { get; set; } = SKColors.Gray;
+        public SKColor ValueLabelColor { get; set; } = SKColors.Gray;
+
         private async Task<List<ChartEntry>> PrepareEntries()
         {
             var records = (await App.Database.GetItemRecords())
@@ -89,15 +92,21 @@ namespace GraphingTracker
 
             var preparedEntries = new List<ChartEntry>();
             var colorIterator = 0;
+            
             foreach (var entry in entries)
             {
                 preparedEntries.Add(
                     new ChartEntry(entry.Value[0] * entry.Value[1])
                     {
                         Label = entry.Key,
-                        Color = SKColor.Parse(colors[colorIterator++])
+                        ValueLabel = entry.Key,
+
+
+                        Color = SKColor.Parse(colors[colorIterator]),
+                        ValueLabelColor = SKColor.Parse(colors[colorIterator++]),
+                        TextColor = SKColor.Parse("#fff")
                     }
-                );
+                ) ;
             }
 
             return preparedEntries;
@@ -107,19 +116,35 @@ namespace GraphingTracker
         {
             var entries = await PrepareEntries();
 
+            
             var chart = new PieChart {
                 Entries = entries,
-                LabelColor = SKColor.Parse("#ff00ff"),
-                LabelTextSize = 30
+                LabelColor = SKColor.Parse("#228B22"),
+                
+                LabelMode = LabelMode.RightOnly,
+               
+                BackgroundColor = SKColors.White,
+                LabelTextSize = 35,
+
+                GraphPosition = GraphPosition.AutoFill,
+                HoleRadius = 0.2f
+                
             };
             chartView.Chart = chart;
         }
-
+        
         private async void createBarGraph()
         {
             var entries = await PrepareEntries();
 
-            var chart = new BarChart { Entries = entries };
+            var chart = new BarChart {
+                Entries = entries,
+                LabelTextSize = 30,
+                ValueLabelOrientation = Orientation.Horizontal,
+                BackgroundColor = SKColors.Transparent,
+                LabelColor = SKColor.Parse("#ffffff"),
+                LabelOrientation = Orientation.Horizontal
+            };
             chartView.Chart = chart;
         }
     }

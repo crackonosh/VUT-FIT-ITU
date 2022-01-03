@@ -22,15 +22,34 @@ ITU project 2021 - Graphing Tracker
        </Grid.Background>
     <Frame WidthRequest="150" CornerRadius="50" Margin="20" HeightRequest="300" BackgroundColor="white">
 <StackLayout> 
-    
+<StackLayout Orientation="Horizontal"> 
+
 <Label  Text="Category"
         FontSize="Medium"
         HorizontalOptions="Start"
-        VerticalOptions="Start"
+        VerticalOptions="CenterAndExpand"
         Margin="20,20,0,0"
         Grid.Row="0"
         TextColor="#038aff"/>
-
+   
+    
+   <Button Text="+ New Category"
+        FontSize="Micro"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="End"
+        Margin="0,0,-60,0"
+        Grid.Row="0"
+           Clicked="NewCategory"
+           CornerRadius="50"
+           HeightRequest="30"
+ 
+           BackgroundColor="AliceBlue"
+           
+        TextColor="#038aff"/>
+    
+    
+</StackLayout> 
+    
 <Picker x:Name="category_picker"
           
         ItemDisplayBinding="{Binding Name}"
@@ -44,14 +63,32 @@ ITU project 2021 - Graphing Tracker
         </Picker.Items>   
 </Picker>
 
+<StackLayout Orientation="Horizontal">
 <Label  Text="Item"
         FontSize="Medium"
         HorizontalOptions="Start"
-        VerticalOptions="Start"
+        VerticalOptions="Center"
         Margin="20,20,0,0"
        
         Grid.Row="0"
         TextColor="#038aff"/>
+
+    <Button Text="+ New Item"
+        FontSize="Micro"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="End"
+        Margin="0,0,-110,0"
+        Clicked="NewItem"
+        Grid.Row="0"
+           CornerRadius="50"
+           HeightRequest="30"
+ 
+           BackgroundColor="AliceBlue"
+           
+        TextColor="#038aff"/>
+    
+    
+</StackLayout> 
        
 <Picker 
         Margin="20,0,20,0"

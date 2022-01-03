@@ -16,39 +16,62 @@ ITU project 2021 - Graphing Tracker
     <ContentPage.ToolbarItems> 
     <ToolbarItem Text="Add"  Clicked="Button_Clicked"></ToolbarItem>
 </ContentPage.ToolbarItems>
-
+    <Grid>
+    <Grid.Background>
+           
+           <LinearGradientBrush EndPoint="0,1">
+               <GradientStop Color="#038aff"
+                               Offset="0.3" />
+               <GradientStop Color="#d896ff"
+                               Offset="1.0" />            
+           </LinearGradientBrush>
+        </Grid.Background>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+    </Grid.RowDefinitions> 
   <StackLayout>
-      <Label x:Name="lblName" ></Label>
-      <ListView x:Name="llist" Grid.Row="1" HeightRequest="300" >
-       <ListView.ItemTemplate>
+            <ListView x:Name="llist" Grid.Row="1" 
+                 HasUnevenRows="True"
+                SeparatorVisibility="None" RowHeight="70"
+               BackgroundColor="Transparent">
+      <ListView.ItemTemplate>
            <DataTemplate>
                <ViewCell>
-                   <Grid>
-                       <Grid.ColumnDefinitions>
-                           <ColumnDefinition Width="*"/>
-                           <ColumnDefinition Width="7*"/>
-                       </Grid.ColumnDefinitions>
-                       
-                        <Label Text="{Binding Name} " VerticalOptions="Start" Grid.Column="1"></Label>
-                        <Image Source="edit.png" Grid.Column="2">
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="TapGestureRecognizer_edit"
-                                  CommandParameter="{Binding Name}"  />
-                            </Image.GestureRecognizers>
-                        </Image>
-                       
-                       <Image Source="trash.png" Grid.Column="3">
-                            <Image.GestureRecognizers>
+                   <Grid Padding="10">
+                        <StackLayout HorizontalOptions="Center">  
+                           
+                      
+                        <Frame CornerRadius="25" WidthRequest ="350" HeightRequest="40" HasShadow="True"  >
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                
+                            <Label VerticalOptions="CenterAndExpand" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextColor="#038aff" WidthRequest="300" 
+                            FontSize="20"
+                                   
+                            Text="{Binding Name}">
+                                <Label.GestureRecognizers>
+                                   
+                                  </Label.GestureRecognizers>
+                            </Label>
+                           
+                              <Image Source="edit.png"   WidthRequest="50" HorizontalOptions="End">
+                                  <Image.GestureRecognizers>
                                 <TapGestureRecognizer
-                               Tapped="TapGestureRecognizer_delete"
-                                   CommandParameter="{Binding Name}" />
+                                   
+                                    Tapped="TapGestureRecognizer_Tapped_Edit"
+                                    CommandParameter="{Binding Name}"/>
                             </Image.GestureRecognizers>
+                              </Image>
+                               <Image Source="trash.png"  HeightRequest="50" WidthRequest="50" HorizontalOptions="End">
+                             
                         </Image>
+                        </StackLayout>
+                        </Frame>
+                       </StackLayout>
                    </Grid>
-                  
-               </ViewCell>
-           </DataTemplate>
-       </ListView.ItemTemplate>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
    </ListView>
   </StackLayout>
+        </Grid>
 </ContentPage>

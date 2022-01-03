@@ -23,7 +23,7 @@ namespace GraphingTracker
             {
                 if (database == null)
                 {
-                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "db5.db3"));
+                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "db6.db3"));
                     database.InitializeDatabaseData();
                 }
 

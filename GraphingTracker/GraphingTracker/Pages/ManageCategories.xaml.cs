@@ -21,6 +21,7 @@ namespace GraphingTracker
         {
             base.OnAppearing();
             catlist.ItemsSource = await App.Database.GetItemCategories();
+    
         }
 
         async void Button_Clicked(System.Object sender, System.EventArgs e)

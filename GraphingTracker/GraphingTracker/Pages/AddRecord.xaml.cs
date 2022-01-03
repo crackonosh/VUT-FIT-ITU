@@ -2,7 +2,7 @@
 //ITU project 2021 - Graphing Tracker
 
 //@authors - Lukas Hais, xhaisl00@fit.vutbr.cz
-//         - Tadeas Kachyma, xkachy00fit.vutbr.cz
+//         - Tadeas Kachyna, xkachy00fit.vutbr.cz
 //@date - 5.12.2021
 //****************************************************
 using Xamarin.Forms;
@@ -33,9 +33,13 @@ namespace GraphingTracker
 
         private async void categoryChanged(object sender, System.EventArgs e)
         {
-            item_picker.ItemsSource = await App.Database.GetItemsForCategory(
+            if (((Models.ItemCategory) category_picker.SelectedItem) != null)
+            {
+                item_picker.ItemsSource = await App.Database.GetItemsForCategory(
                 ((Models.ItemCategory)category_picker.SelectedItem).UnitCategoryId
                 );
+            }
+            
         }
 
 
@@ -63,6 +67,20 @@ namespace GraphingTracker
         async void Button_Clicked_Cancel(System.Object sender, System.EventArgs e)
         {
             await Navigation.PopAsync();
+        }
+
+        async void NewItem(System.Object sender, System.EventArgs e)
+        {
+            if (category_picker.SelectedIndex != -1)
+            {
+                await Navigation.PushAsync(new AddItem((Models.ItemCategory)category_picker.SelectedItem));
+            }
+            
+        }
+
+        async void NewCategory(System.Object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new AddCategory());
         }
     }
 }

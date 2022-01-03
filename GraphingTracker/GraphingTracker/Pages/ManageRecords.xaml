@@ -45,10 +45,20 @@ ITU project 2021 - Graphing Tracker
                       
                         <Frame CornerRadius="25" WidthRequest ="350" HeightRequest="40" HasShadow="True"  >
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                
-                            <Label VerticalOptions="CenterAndExpand" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextColor="#038aff" WidthRequest="300" 
-                            FontSize="20" x:Name="bbb"
-                           />
+                             <Label VerticalOptions="CenterAndExpand" FontAttributes="Bold" HorizontalOptions="StartAndExpand" TextColor="#038aff" WidthRequest="300" 
+                            FontSize="20"
+                                  
+                            Text="{Binding ItemName}">
+                            
+                            </Label>
+                             <Label VerticalOptions="CenterAndExpand" FontAttributes="Bold" HorizontalOptions="StartAndExpand" TextColor="#038aff" WidthRequest="300" 
+                            FontSize="20"
+                                  
+                            Text="{Binding ItemId}">
+                                <Label.GestureRecognizers>
+                                   
+                                  </Label.GestureRecognizers>
+                            </Label>
                            
                               <Image Source="edit.png"   WidthRequest="50"  HorizontalOptions="End">
                                   <Image.GestureRecognizers>

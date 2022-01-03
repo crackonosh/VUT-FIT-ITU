@@ -5,6 +5,16 @@ using Xamarin.Forms;
 
 namespace GraphingTracker
 {
+    public class ItemRecordForDisplay
+    {
+        public int Id { get; set; }
+        public int ItemId { get; set; }
+        public int ItemCategoryId { get; set; }
+        public int Count { get; set; }
+
+        public string ItemName { get; set; }
+    }
+
     public partial class ManageRecords : ContentPage
     {
         public ManageRecords()
@@ -16,8 +26,24 @@ namespace GraphingTracker
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            recordlist.ItemsSource = await App.Database.GetItemRecords();
-           
+            var tmp = await App.Database.GetItemRecords();
+            var items = new List<ItemRecordForDisplay>();
+
+            foreach (var i in tmp)
+            {
+                var item = await App.Database.GetItem(i.Id);
+                if (item == null) continue;
+                items.Add(new ItemRecordForDisplay
+                {
+                    Id = i.Id,
+                    ItemId = i.ItemId,
+                    ItemCategoryId = i.ItemCategoryId,
+                    Count = i.Count,
+                    ItemName = item.Name
+                });
+            }
+            recordlist.ItemsSource = items;
+            
             
         }
 
@@ -43,9 +69,9 @@ namespace GraphingTracker
             await Navigation.PushAsync(new AddRecord());
         }
 
-        void TapGestureRecognizer_Tapped_Edit(System.Object sender, System.EventArgs e)
+        async void TapGestureRecognizer_Tapped_Edit(System.Object sender, System.EventArgs e)
         {
-            
+      
         }
     }
 }

@@ -36,9 +36,9 @@ namespace GraphingTracker
             Navigation.PushAsync(new AddItem(_category));
         }
 
-        void TapGestureRecognizer_edit(System.Object sender, System.EventArgs e)
+        void TapGestureRecognizer_Tapped_Edit(System.Object sender, System.EventArgs e)
         {
-            
+               
         }
 
         void TapGestureRecognizer_delete(System.Object sender, System.EventArgs e)
