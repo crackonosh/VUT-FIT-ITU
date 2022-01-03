@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--****************************************************
+ITU project 2021 - Graphing Tracker
+
+@authors - Lukas Hais, xhaisl00@fit.vutbr.cz
+@date - 5.12.2021
+****************************************************-->
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" 
+    x:Class="GraphingTracker.GraphInfo" 
+   
+    Title="Graph Info">
+
+
+ <Grid>
+    <Grid.Background>
+           
+           <LinearGradientBrush EndPoint="0,1">
+               <GradientStop Color="#038aff"
+                               Offset="0.3" />
+               <GradientStop Color="#d896ff"
+                               Offset="1.0" />            
+           </LinearGradientBrush>
+        </Grid.Background>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+        <Frame WidthRequest="150" CornerRadius="50" Margin="20" HeightRequest="300" BackgroundColor="white">
+         <microcharts:ChartView x:Name="chartView"  />
+            </Frame>
+     </Grid>
+
+</ContentPage>

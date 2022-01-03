@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--****************************************************
+ITU project 2021 - Graphing Tracker
+
+@authors - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+@date - 5.12.2021
+****************************************************-->
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+    xmlns:local="clr-namespace:GraphingTracker"
+    xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+    x:Class="GraphingTracker.ManageGraphs"
+    Title="ManageGraphs">
+
+<ContentPage.ToolbarItems>
+    <ToolbarItem Text="Add"  Clicked="Button_Clicked"></ToolbarItem>
+</ContentPage.ToolbarItems>
+
+<Grid>
+    <Grid.Background>
+           
+           <LinearGradientBrush EndPoint="0,1">
+               <GradientStop Color="#038aff"
+                               Offset="0.3" />
+               <GradientStop Color="#d896ff"
+                               Offset="1.0" />            
+           </LinearGradientBrush>
+        </Grid.Background>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+    </Grid.RowDefinitions> 
+
+    <ListView  WidthRequest="80"
+               x:Name="graph_list"
+               HasUnevenRows="True"
+               ItemsSource="{Binding List}"
+         
+               Grid.Row="0"
+               ItemSelected="catlist_ItemSelected"
+               BackgroundColor="Transparent"
+               SeparatorVisibility="None" RowHeight="70">
+
+       <ListView.ItemTemplate>
+           <DataTemplate>
+               <ViewCell>
+                   <Grid Padding="10">
+                        <StackLayout HorizontalOptions="Center">  
+                           
+                      
+                        <Frame CornerRadius="25" WidthRequest ="350" HeightRequest="40" HasShadow="True"  >
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                
+                            <Label VerticalOptions="CenterAndExpand" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextColor="#038aff" WidthRequest="300" 
+                            FontSize="20"
+                                   
+                            Text="{Binding Name}">
+                                <Label.GestureRecognizers>
+                                   <!--<TapGestureRecognizer
+                                       NumberOfTapsRequired="2"
+                                       Tapped="TapGestureRecognizer_Tapped_2">
+                                       
+                                   </TapGestureRecognizer>-->
+                                  </Label.GestureRecognizers>
+                            </Label>
+                           
+                            <Image Source="edit.png"   WidthRequest="50" HorizontalOptions="End">
+                                <Image.GestureRecognizers>
+                                <!--<TapGestureRecognizer
+                                    Tapped="TapGestureRecognizer_Tapped_Edit"/>-->
+                            </Image.GestureRecognizers>
+                            </Image>
+                            <Image Source="trash.png"  HeightRequest="50" WidthRequest="50" HorizontalOptions="End">
+                                <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="TapGestureRecognizer_Tapped_Remove"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        </StackLayout>
+                        </Frame>
+                       </StackLayout>
+                   </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+     
+</Grid>
+</ContentPage>

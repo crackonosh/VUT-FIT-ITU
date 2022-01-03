@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--****************************************************
+ITU project 2021 - Graphing Tracker
+
+@authors - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+@date - 5.12.2021
+****************************************************-->
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GraphingTracker.AboutAppPage"
+    NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="#038aff"
+                                Offset="0.3" />
+                <GradientStop Color="#85ffdc"
+                                Offset="1.0" />            
+            </LinearGradientBrush>
+        </Grid.Background>
+    <Frame WidthRequest="150" CornerRadius="50" Margin="20" HeightRequest="300" BackgroundColor="white">
+        <StackLayout>
+            <Frame BackgroundColor="#038aff" CornerRadius="250" HeightRequest="150" WidthRequest="320">
+            <Image Source="logo2.png" HeightRequest="160" HorizontalOptions ="Center" VerticalOptions="Center" Margin="10,8,0,0"/>
+            </Frame>
+                <Label Margin="0,20,0,0" Text="BUT FIT ITU project 2021" HorizontalOptions="Center" FontSize="20" TextColor="#038aff" FontAttributes="Bold" />
+                 <Label Margin="0,10,0,0"  Text="Developers" HorizontalOptions="Center" FontSize="20" TextColor="Black"/>
+                 <Label Text="Tadeáš Kachyňa" HorizontalOptions="Center" FontSize="15" TextColor="Black"/>
+                 <Label Text="Lukáš Hais" HorizontalOptions="Center" FontSize="15" TextColor="Black"/>
+                 <Label Text="Lukáš Neupauer" HorizontalOptions="Center" FontSize="15" TextColor="Black" />
+                 <Label Margin="0,20,0,0" Text="This application brings you a new modern" HorizontalOptions="CenterAndExpand" FontSize="15" TextColor="Black" />
+            <Label Margin="0,0,0,0" Text="interface with options for recording your daily life." HorizontalOptions="CenterAndExpand" FontSize="15" TextColor="Black" />
+            <Button Text="Go Back"
+                    WidthRequest="200"
+                    BorderColor="#038aff"
+                    TextColor="#038aff"
+                    BorderWidth="1"
+                    BackgroundColor="White"
+                    HeightRequest="50"
+                    CornerRadius="20"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Clicked="Button_Clicked_Go_Back"
+                   />          
+            </StackLayout>
+        </Frame>
+   </Grid>
+</ContentPage>

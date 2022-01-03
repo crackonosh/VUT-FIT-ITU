@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--****************************************************
+ITU project 2021 - Graphing Tracker
+
+@authors - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+@date - 5.12.2021
+****************************************************-->
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GraphingTracker.AddRecord"
+    Title="Add Record"
+   >
+    <Grid>
+        <Grid.Background>
+           <LinearGradientBrush EndPoint="0,1">
+               <GradientStop Color="#038aff"
+                               Offset="0.3" />
+               <GradientStop Color="#d896ff"
+                               Offset="1.0" />            
+           </LinearGradientBrush>
+       </Grid.Background>
+    <Frame WidthRequest="150" CornerRadius="50" Margin="20" HeightRequest="300" BackgroundColor="white">
+<StackLayout> 
+<StackLayout Orientation="Horizontal"> 
+
+<Label  Text="Category"
+        FontSize="Medium"
+        HorizontalOptions="Start"
+        VerticalOptions="CenterAndExpand"
+        Margin="20,20,0,0"
+        Grid.Row="0"
+        TextColor="#038aff"/>
+   
+    
+   <Button Text="+ New Category"
+        FontSize="Micro"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="End"
+        Margin="0,0,-60,0"
+        Grid.Row="0"
+           Clicked="NewCategory"
+           CornerRadius="50"
+           HeightRequest="30"
+ 
+           BackgroundColor="AliceBlue"
+           
+        TextColor="#038aff"/>
+    
+    
+</StackLayout> 
+    
+<Picker x:Name="category_picker"
+          
+        ItemDisplayBinding="{Binding Name}"
+        Margin="20,0,20,0"
+        HeightRequest="40"
+        TitleColor="#038aff"
+        SelectedIndex="0">
+        
+        <Picker.Items>
+            <x:String ></x:String>
+        </Picker.Items>   
+</Picker>
+
+<StackLayout Orientation="Horizontal">
+<Label  Text="Item"
+        FontSize="Medium"
+        HorizontalOptions="Start"
+        VerticalOptions="Center"
+        Margin="20,20,0,0"
+       
+        Grid.Row="0"
+        TextColor="#038aff"/>
+
+    <Button Text="+ New Item"
+        FontSize="Micro"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="End"
+        Margin="0,0,-110,0"
+        Clicked="NewItem"
+        Grid.Row="0"
+           CornerRadius="50"
+           HeightRequest="30"
+ 
+           BackgroundColor="AliceBlue"
+           
+        TextColor="#038aff"/>
+    
+    
+</StackLayout> 
+       
+<Picker 
+        Margin="20,0,20,0"
+        HeightRequest="40"
+        ItemDisplayBinding="{Binding Name}"
+        TitleColor="#038aff"
+        x:Name="item_picker"
+        SelectedIndex="0">
+       
+        <Picker.Items>
+        </Picker.Items>   
+</Picker>
+
+<Label  Text="Counter"
+        FontSize="Medium"
+        HorizontalOptions="Start"
+        VerticalOptions="Start"
+        Margin="20,20,0,0"
+        Grid.Row="0"
+        TextColor="#038aff"/>
+       
+<Entry
+        x:Name="counter"
+        Margin="20,0,20,0"
+         Keyboard="Numeric"
+        HeightRequest="40">
+       
+</Entry>
+
+
+<Button Grid.Row="8"
+        Text="Add"
+        TextColor="white"
+        BackgroundColor="#038aff"
+        WidthRequest="200"
+        HeightRequest="50"
+        CornerRadius="20"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="CenterAndExpand"
+        Clicked="Button_Clicked_Add"
+        
+        />
+<Button Grid.Row="9"
+        Text="Cancel"
+        Clicked="Button_Clicked_Cancel"
+        WidthRequest="200"
+        TextColor="red"
+        BackgroundColor="white"
+        BorderColor="red"
+        BorderWidth="1"
+        CornerRadius="20"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="StartAndExpand"
+        />
+   
+</StackLayout>
+        </Frame>
+        </Grid>
+</ContentPage>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--****************************************************
+ITU project 2021 - Graphing Tracker
+
+@authors - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+@date - 5.12.2021
+****************************************************-->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="GraphingTracker.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             >
+        
+   <Grid RowSpacing="0" ColumnSpacing="0">
+
+       <Grid.Background>   
+           <LinearGradientBrush EndPoint="0,1">
+               <GradientStop Color="#038aff"
+                               Offset="0.3" />
+               <GradientStop Color="#d896ff"
+                               Offset="1.0" />            
+           </LinearGradientBrush>
+       </Grid.Background>
+
+       <Grid.RowDefinitions>
+           <RowDefinition Height="230"/>
+           <RowDefinition Height="25"/>
+           <RowDefinition Height="*"/>
+           <RowDefinition Height="*"/>  
+       </Grid.RowDefinitions>
+              
+     
+       <Rectangle
+            Grid.Row="0"
+            BackgroundColor="#038aff"
+            WidthRequest="100"
+            HeightRequest="300"
+            Margin="0,0,0,0"/>
+        
+        <Image Margin="0,20,0,0"
+               Source="logo2.png"
+               Grid.Row="0"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Center"/>
+
+        <Label TextColor="White"
+               Text="...your best tracking friend..."
+               FontSize="Medium"
+               TextTransform="Lowercase"
+               TextType="Html" Grid.Row="1"
+               FontAttributes="Italic"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+
+       <ImageButton
+               Source="info.png"
+               BackgroundColor="Transparent"
+               Margin="0,5,5,0"
+               Grid.Row="0"
+               VerticalOptions="StartAndExpand"
+               HorizontalOptions="End"
+               WidthRequest="50"
+               Clicked="ImageButton_Clicked" />
+       <Button
+              xct:ShadowEffect.Color="Black"
+              Text="Add Record"
+              ContentLayout="Top, 0"
+              HorizontalOptions="StartAndExpand"
+              VerticalOptions="EndAndExpand"
+              Padding="0,80,0,0"
+              Grid.Row="2"
+              WidthRequest="150"
+              HeightRequest="150"
+              Margin="49, 0, 0, 5"
+              Clicked="Button_ClickedAsync"
+              TextColor="#046dc9"
+              BackgroundColor="White"
+              CornerRadius="20"/>
+
+           <ImageButton  Grid.Row="2" Source="addrecord.png" Margin="89,15,0,0" VerticalOptions="Center" HorizontalOptions="StartAndExpand"
+                  HeightRequest="75" WidthRequest="75" Clicked="Button_ClickedAsync" BackgroundColor="Transparent"></ImageButton>
+       
+      <Button
+           xct:ShadowEffect.Color="Black"
+          Text="Manage Graphs"
+          HorizontalOptions="EndAndExpand"
+          VerticalOptions="EndAndExpand"
+          Grid.Row="2"
+           Padding="0,80,0,0"
+          Margin="0, 0, 49, 5"
+          WidthRequest="150"
+          HeightRequest="150"
+          Clicked="Button_ClickedAsync2"
+          TextColor="#046dc9"
+          BackgroundColor="White"
+          CornerRadius="20"
+          />
+
+      <ImageButton  Grid.Row="2" Source="graph.png" Margin="0,15,84,0" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                  HeightRequest="75" WidthRequest="75"  Clicked="Button_ClickedAsync2" BackgroundColor="Transparent" ></ImageButton>
+
+           
+   
+
+      <Button
+          xct:ShadowEffect.Color="Black"
+          Text="Manage
+          Categories"
+          HorizontalOptions="StartAndExpand"
+          VerticalOptions="StartAndExpand"
+          Grid.Row="3"
+          Padding="0,80,0,0"
+          WidthRequest="150"
+          HeightRequest="150"
+          Margin="49, 5, 0, 0"
+          Clicked="Button_ClickedAsync3"
+        TextColor="#046dc9"
+          BackgroundColor="White"
+          CornerRadius="20"/>
+       <ImageButton  Grid.Row="3" Source="managecategories.png" Margin="89,20,0,0" VerticalOptions="Start" HorizontalOptions="StartAndExpand"
+                  HeightRequest="75" WidthRequest="75" Clicked="Button_ClickedAsync3" BackgroundColor="Transparent"></ImageButton>
+
+       
+      <Button
+           xct:ShadowEffect.Color="Black"
+          Text="Manage
+            Records"
+         HorizontalOptions="EndAndExpand"
+          VerticalOptions="StartAndExpand"
+          Grid.Row="3"
+           Padding="0,80,0,0"
+          WidthRequest="150"
+          HeightRequest="150"
+          Margin="0, 5, 49, 0"
+          Clicked="Button_ClickedAsync4"
+          TextColor="#046dc9"
+          BackgroundColor="White"
+          CornerRadius="20"/>
+       <ImageButton  Grid.Row="3" Source="managerecords.png" Margin="0,20,84,0" VerticalOptions="Start" HorizontalOptions="EndAndExpand"
+                  HeightRequest="75" WidthRequest="75" Clicked="Button_ClickedAsync4" BackgroundColor="Transparent"></ImageButton>
+
+       
+   </Grid>
+
+</ContentPage>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--****************************************************
+ITU project 2021 - Graphing Tracker
+
+@authors - Tadeas Kachyna, xkachy00@fit.vutbr.cz
+@date - 5.12.2021
+****************************************************-->
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GraphingTracker.Pages.AddGraph"
+    Title="Add Graph">
+
+<Grid>
+        <Grid.Background>
+           <LinearGradientBrush EndPoint="0,1">
+               <GradientStop Color="#038aff"
+                               Offset="0.3" />
+               <GradientStop Color="#d896ff"
+                               Offset="1.0" />            
+           </LinearGradientBrush>
+       </Grid.Background>
+    <Frame WidthRequest="150" CornerRadius="50" Margin="20" HeightRequest="300" BackgroundColor="white">
+        <StackLayout>
+<Label  Text="Graph Name"
+        FontSize="Medium"
+        HorizontalOptions="Start"
+        VerticalOptions="Start"
+        Margin="20,5,0,0"
+        TextColor="#038aff"/>
+     
+<Entry  
+        Margin="20,0,20,0"
+        x:Name="graph_name_entry"
+        HeightRequest="40">        
+</Entry>
+
+<Label  Text="Category"
+        FontSize="Medium"
+        HorizontalOptions="Start"
+        VerticalOptions="Start"
+        Margin="20,20,0,0"
+        TextColor="#038aff"/>
+       
+<Picker
+        x:Name="category_picker"
+        ItemDisplayBinding="{Binding Name}"
+        Margin="20,0,20,0"
+        HeightRequest="40"
+        TitleColor="#038aff"
+        SelectedIndex="0">
+        <Picker.Items>
+            <x:String ></x:String>
+        </Picker.Items>   
+</Picker>
+
+<Label  Text="Preferred Unit"
+        FontSize="Medium"
+        HorizontalOptions="Start"
+        VerticalOptions="Start"
+        Margin="20,20,0,0"
+        TextColor="#038aff"/>
+       
+<Picker
+        x:Name="category_unit_picker"
+        ItemDisplayBinding="{Binding Name}"
+        Margin="20,0,20,0"
+        HeightRequest="40"
+        TitleColor="#038aff"
+        SelectedIndex="0">
+        <Picker.Items>
+            <x:String ></x:String>
+        </Picker.Items>   
+</Picker>
+
+<Label  Text="Graph Type"
+        FontSize="Medium"
+        HorizontalOptions="Start"
+        VerticalOptions="Start"
+        Margin="20,20,0,0"
+        TextColor="#038aff"/>
+       
+<Picker   
+        Margin="20,0,20,0"
+        HeightRequest="40"
+        TitleColor="#038aff"
+        x:Name="graph_type_picker"
+        SelectedIndex="0">
+        <Picker.Items>
+            <x:String>Pie</x:String>
+            <x:String>Bar</x:String>
+        </Picker.Items>   
+</Picker>
+
+
+<Button Text="Add"
+        WidthRequest="200"
+        TextColor="white"
+        BackgroundColor="#038aff"
+        HeightRequest="50"
+        CornerRadius="20"
+        Clicked="Button_Clicked_2"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="CenterAndExpand"
+        />
+
+<Button Text="Cancel"
+        TextColor="red"
+        BackgroundColor="white"
+        BorderColor="red"
+        BorderWidth="1"
+        WidthRequest="200"
+        HeightRequest="50"
+        CornerRadius="20"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="StartAndExpand"
+        Clicked="Button_Clicked"
+        />
+   
+</StackLayout>
+       </Frame>
+        </Grid>
+</ContentPage>

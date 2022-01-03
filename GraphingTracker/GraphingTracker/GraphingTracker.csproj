@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.3.1" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="Microcharts" Version="0.9.5.9" />
+    <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Xamarin.CommunityToolkit" />
+    <None Remove="Pages\" />
+    <None Remove="ViewModels\" />
+    <None Remove="Models\" />
+    <None Remove="sqlite-net-pcl" />
+    <None Remove="Microcharts" />
+    <None Remove="Microcharts.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\AddCategory.xaml.cs">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Compile>
+    <Compile Update="Pages\CatInfo.xaml.cs">
+      <DependentUpon>CatInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\GraphInfo.xaml.cs">
+      <DependentUpon>GraphInfo.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Pages\AddCategory.xaml">
+      <IncludeInPackage>false</IncludeInPackage>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="logo.png">
+      <IncludeInPackage>false</IncludeInPackage>
+    </None>
+  </ItemGroup>
+</Project>
